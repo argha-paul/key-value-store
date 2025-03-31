@@ -43,18 +43,64 @@ KV Store running on port 7878
 
 ### Testing Connectivity
 #### Using Netcat:
+
+**Command:**
 ```sh
 printf "SET name Rust\n" | nc 127.0.0.1 7878
 ```
+**Expected output:**
+```
+Key set successfully
+```
+
+**Command:**
 ```sh
 printf "GET name\n" | nc 127.0.0.1 7878
 ```
+**Expected output:**
+```
+Rust
+```
+
+**Command:**
+```sh
+printf "DELETE name\n" | nc 127.0.0.1 7878
+```
+**Expected output:**
+```
+Key deleted successfully
+```
 
 #### Using Telnet (if available):
+
+**Command:**
 ```sh
 telnet 127.0.0.1 7878
+```
+```
 SET name Rust
+```
+**Expected output:**
+```
+Key set successfully
+```
+
+**Command:**
+```
 GET name
+```
+**Expected output:**
+```
+Rust
+```
+
+**Command:**
+```
+DELETE name
+```
+**Expected output:**
+```
+Key deleted successfully
 ```
 
 ### Running Tests
@@ -62,10 +108,4 @@ To verify correctness, run the test suite:
 ```sh
 cargo test
 ```
-
-## Contributing
-Feel free to fork this project and submit pull requests! Follow Rust best practices and add tests for new features.
-
-## License
-This project is open-source and available under the MIT License.
 
