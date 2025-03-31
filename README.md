@@ -24,8 +24,8 @@ A high-performance, in-memory key-value store built with Rust. This project demo
 Clone the repository and navigate into the project directory:
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/rust-kv-store.git
-cd rust-kv-store
+git clone https://github.com/argha-paul/key-value-store.git
+cd key-value-store
 
 # Build the project
 cargo build --release
